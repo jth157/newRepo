@@ -1,0 +1,56 @@
+public class Main
+{
+	public static void main(String[] args) {
+		
+        int k;  //total cities
+        int n;  //size of grid where cities can spawn
+        ArrayList<City> cities; //actual list of cities
+        int[] order;            //order to travel through cities in each perm, size k
+        
+        float bestDistance;     //the best result at any given perm
+        int[] bestOrder;        //the order of cities that resulted in bestDistance
+
+        for i = 0; i < k; i++
+            cities.add(new City(randX, randY)) //new city with rand coords within n
+            order[i] = i; //sets the first order of cities
+
+        bestDistance = calcDistance();
+        for i = 0; i < numPermutations(k); i++
+            nextOrder();
+            d = calcDistance;
+            if d < bestDistance
+                bestDistance = d;
+            
+
+	}
+
+    //gets next permutation of cities according to lexicographical ordering
+    nextOrder(){
+        int I = -1;
+        for i = 0; i < order.length; i++
+            if order[i] < order[i+1]
+                I = i;
+    }
+
+    float calcDistance(){
+
+    }
+
+    //the number of perms to check is k!, so i just do a simple factorial alg
+    int numPermutations(int k){
+        if(k == 1)
+            return 1;
+        else
+            return k * numPermutations(k-1);
+    }
+}
+
+class City{
+    int x;
+    int y;
+
+    public City(int x, int y){
+        this.x = x;
+        this.y = y;
+    }
+}
